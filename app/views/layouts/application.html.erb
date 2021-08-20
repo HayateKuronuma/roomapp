@@ -30,12 +30,21 @@
           </form>
         </div>
         
-        <div class="header-right-nav">
-          <div class="btn-wrapper">
-            <a class="btn signin-btn" href="/users/signin">ログイン</a>
-            <a class="btn to-signup-btn" href="/users/signup">登録する</a>
+        <% if session[:user_id] %>
+          <div class="header-right-nav">
+            <p class="current-user-name"><%= @current_user.name %></p>
+            <div class="current-user-img">
+              <img src="<%= "/#{@current_user.image_name}" %>">
+            </div>
           </div>
-        </div>
+        <% else %>
+          <div class="header-right-nav">
+            <div class="btn-wrapper">
+              <a class="btn signin-btn" href="/users/signin">ログイン</a>
+              <a class="btn to-signup-btn" href="/users/signup">登録する</a>
+            </div>
+          </div>
+        <% end %>
       </div>
     </header>
     
