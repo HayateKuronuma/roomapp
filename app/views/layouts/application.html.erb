@@ -3,6 +3,7 @@
   <head>
     <title>RoomApp</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,6 +12,39 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <div class="header-container">
+        <div class="header-left-nav">
+          <a href="/">
+            <img src="/logo.png">
+          </a>
+          <form action="">
+            <div class="header-serch">
+              <input type="text" name="area" placeholder="エリア" class="header-form">
+              <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="header-serch">
+              <input type="text" name="keyword" placeholder="キーワード" class="header-form">
+              <i class="fas fa-search"></i>
+              </div>
+          </form>
+        </div>
+        
+        <div class="header-right-nav">
+          <div class="btn-wrapper">
+            <a class="btn signin-btn" href="/users/signin">ログイン</a>
+            <a class="btn to-signup-btn" href="/users/signup">登録する</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    
+    <main>
+      <%= yield %>
+    </main>
+    
+    <footer class="footer">
+      <p>© 2020 POTEPAN.INC.</p>
+    </footer>
   </body>
 </html>

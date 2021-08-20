@@ -1,0 +1,26 @@
+<% if @error_message %>
+  <div class="form-error">
+    <%= @error_message %>
+  </div>
+<% end %>
+<div class="container">
+  <div class="form-wrapper">
+    <p>ログイン</p>
+    <div class="form-content">
+      <%= form_tag('/users/signin', method: :post) do %>
+        <div class="form-content-inner">
+          <%= text_field_tag :email, "#{@email}", placeholder: "メールアドレス" %>
+        </div>
+        
+        <div class="form-content-inner">
+          <%= password_field_tag :password, "#{@password}", placeholder: "パスワード" %>
+        </div>
+
+        <div class="form-btn">
+          <%= submit_tag "ログイン", class: "btn" %>
+        </div>
+      <% end %>
+      <%= link_to "新しいアカウントを作成", "/users/signup" %>
+    </div>
+  </div>
+</div>

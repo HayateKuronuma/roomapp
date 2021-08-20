@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="form-wrapper">
+    <p>新しいアカウントを作成</p>
+    
+    <%= render "shared/error", obj:@user %>
+    
+    <div class="form-content">
+      <%= form_for @user, url: users_signup_path do |f| %>
+        <div class="form-content-inner">
+          <%= f.text_field :name, placeholder: "ユーザー名" %>
+        </div>
+        
+        <div class="form-content-inner">
+          <%= f.text_field :email, placeholder: "メールアドレス" %>
+        </div>
+        
+        <div class="form-content-inner">
+          <%= f.password_field :password, placeholder: "パスワード" %>
+        </div>
+        
+        <div class="form-content-inner">
+          <%= f.password_field :password_confirmation, placeholder: "パスワード確認" %>
+        </div>
+        
+        <div class="form-btn">
+          <%= f.submit "新しいアカウントを作成", class: "btn" %>
+        </div>
+      <% end %>
+      <%= link_to "すでにアカウントをお持ちの方はログイン", "/users/signin" %>
+    </div>
+  </div>
+</div>
