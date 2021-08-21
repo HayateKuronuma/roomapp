@@ -29,7 +29,7 @@ class UsersController < ApplicationController
   def destroy
   end 
   
-  def acount
+  def account
   end 
   
   def signin_form

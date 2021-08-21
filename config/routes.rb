@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get '/', to: 'home#top'
   
-  get 'users/acount', to: 'users#acount'
+  get 'users/account', to: 'users#account'
   get 'users/signup', to: 'users#signup'
   get 'users/signin', to: 'users#signin_form'
   post 'users/signup', to: 'users#create'
