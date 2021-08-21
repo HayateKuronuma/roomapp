@@ -35,13 +35,30 @@
             <p class="current-user-name"><%= @current_user.name %></p>
             <div class="current-user-img">
               <img src="<%= "/#{@current_user.image_name}" %>">
+              <ul class="header-nav-menu">
+                <li>
+                  <%= link_to("ルーム登録", "") %>
+                </li>
+                <li>
+                  <%= link_to("予約済みルーム一覧", "") %>
+                </li>
+                <li>
+                  <%= link_to("登録済みルーム一覧", "") %>
+                </li>
+                <li>
+                  <%= link_to("設定", "") %>
+                </li>
+                <li>
+                  <%= link_to("ログアウト", "/logout", {method: :post}) %>
+                </li>
+              </ul>
             </div>
           </div>
         <% else %>
           <div class="header-right-nav">
             <div class="btn-wrapper">
-              <a class="btn signin-btn" href="/users/signin">ログイン</a>
-              <a class="btn to-signup-btn" href="/users/signup">登録する</a>
+              <%= link_to("ログイン", "/users/signin", class: "btn signin-btn") %>
+              <%= link_to("登録する", "/users/signup", class: "btn to-signup-btn") %>
             </div>
           </div>
         <% end %>
