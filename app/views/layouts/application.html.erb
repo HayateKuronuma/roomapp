@@ -46,10 +46,10 @@
                   <%= link_to("登録済みルーム一覧", "") %>
                 </li>
                 <li>
-                  <%= link_to("設定", "/users/account") %>
+                  <%= link_to("設定", :users_account) %>
                 </li>
                 <li>
-                  <%= link_to("ログアウト", "/logout", {method: :post}) %>
+                  <%= link_to("ログアウト", :logout, {method: :post}) %>
                 </li>
               </ul>
             </div>
@@ -57,8 +57,8 @@
         <% else %>
           <div class="header-right-nav">
             <div class="btn-wrapper">
-              <%= link_to("ログイン", "/users/signin", class: "btn signin-btn") %>
-              <%= link_to("登録する", "/users/signup", class: "btn to-signup-btn") %>
+              <%= link_to("ログイン", :users_signin, class: "btn signin-btn") %>
+              <%= link_to("登録する", :users_signup, class: "btn to-signup-btn") %>
             </div>
           </div>
         <% end %>

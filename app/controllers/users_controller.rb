@@ -20,11 +20,35 @@ class UsersController < ApplicationController
   def show
   end 
   
+  def profile_edit
+    @user = User.find_by(id: @current_user.id)
+  end 
+  
+  def profile_update
+    @user = User.find_by(id: @current_user.id)
+    if @user.update(params.require(:user).permit(:image_name, :name, :introduction))
+      flash[:notice] = "プロフィールを更新しました"
+      redirect_to ("/users/profile")
+    else
+      render "profile_edit"
+    end 
+  end 
+  
   def edit
+    @user = User.find_by(id: @current_user.id)
   end 
   
   def update
-  end 
+    @user = User.find_by(id: @current_user.id)
+    if @user.authenticate(params[:current_password])
+      @user.update(params.permit(:email, :password, :password_confirmation))
+      flash[:notice] = "アカウント情報を更新しました"
+      redirect_to ("/users/account")
+    else
+      @error_message = "現在のパスワードが違います"
+      render "edit"
+    end
+  end
   
   def destroy
   end 
@@ -36,8 +60,8 @@ class UsersController < ApplicationController
   end
   
   def signin
-    @user = User.find_by(email: params[:email], password: params[:password])
-    if @user
+    @user = User.find_by(email: params[:email])
+    if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
       flash[:notice] = "ログインしました"
       redirect_to ("/")

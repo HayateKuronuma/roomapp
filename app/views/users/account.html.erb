@@ -1,41 +1,35 @@
-<div class="user-container">
-  <div class="acount-content-wrapper">
-    <div class="acount-content-area">
-      <div class="user-nav">
-        <ul>
-          <li class="<%= 'active' if request.fullpath == '/users/account' %>">
-            <a href="/users/account" >アカウント</a>
-          </li>
-          <li class="<%= 'active' if request.fullpath == '/users/profile' %>">
-            <a href="/users/profile">プロフィール</a>
-          </li>
-        </ul>
-      </div>
+<% if flash.notice %>
+  <p class="notice"><%= flash.notice %></p>
+<% end %>
+<div class="setting-container">
+  <div class="setting-content-wrapper">
+    <div class="setting-content-area">
+      <%= render "shared/sidebar" %>
       
-      <div class="acount-detail-area">
-        <div class="acount-detail-box">
+      <div class="setting-detail-area">
+        <div class="setting-detail-box">
           
-          <div class="acount-content">
+          <div class="setting-content">
             <p>アカウント</p>
           </div>
           
-          <div class="acount-content">
-            <div class="acount-content-inner">
+          <div class="setting-content">
+            <div class="setting-content-inner">
               <h4>メールアドレス</h4>
-              <div class="acount-email">test</div>
+              <div class="setting-form"><%= @current_user.email %></div>
             </div>
           </div>
           
-          <div class="acount-content">
-            <div class="acount-content-inner">
+          <div class="setting-content">
+            <div class="setting-content-inner">
               <h4>パスワード</h4>
-              <div class="acount-password">test</div>
+              <div class="setting-form">*********</div>
             </div>
           </div>
           
-          <div class="acount-content">
-            <div class="acount-content-inner">
-              <a class="btn edit-btn" href="/users/edit">編集</a>
+          <div class="setting-content">
+            <div class="setting-content-inner">
+              <%= link_to "編集", :users_edit, class: "btn edit-btn" %>
             </div>
           </div>
         </div>

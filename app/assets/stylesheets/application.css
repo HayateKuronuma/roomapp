@@ -18,6 +18,12 @@
   box-sizing: border-box;
 }
 
+[type=button]:not(:disabled), 
+[type=submit]:not(:disabled), 
+button:not(:disabled) {
+  cursor: pointer;
+}
+
 body {
   display: flex;
   flex-flow: column;
@@ -35,6 +41,10 @@ a {
 
 h4 {
   margin: 0;
+}
+
+body, p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
 }
 
 .footer {
