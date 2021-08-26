@@ -15,7 +15,11 @@
             
             <div class="setting-content">
               <div class="icon-box">
-                <img src="<%= "/#{@current_user.image_name}" %>" >
+                <% if @current_user.image_name.attached? %>
+                  <%= image_tag @current_user.image_name.variant(gravity: :center, resize:"300x300^", crop:"300x300+0+0"), id: "current-user-img" %>
+                <% else %>
+                  <%= image_tag "/default_icon.jpg" %>
+                <% end %>
               </div>
             </div>
             

@@ -34,7 +34,11 @@
           <div class="header-right-nav">
             <p class="current-user-name"><%= @current_user.name %></p>
             <div class="current-user-img">
-              <img src="<%= "/#{@current_user.image_name}" %>" id="current-user-img">
+              <% if @current_user.image_name.attached? %>
+                <%= image_tag @current_user.image_name.variant(gravity: :center, resize:"300x300^", crop:"300x300+0+0"), id: "current-user-img" %>
+              <% else %>
+                <%= image_tag "/default_icon.jpg", id: "current-user-img" %>
+              <% end %>
               <ul class="header-nav-menu" id="nav-menu">
                 <li>
                   <%= link_to("ルーム登録", "") %>
