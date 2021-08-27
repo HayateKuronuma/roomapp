@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :reservations
+  get 'rooms/posts', to: 'rooms#posts'
+  resources :rooms
+  
   get '/', to: 'home#top'
   
   get 'users/account', to: 'users#account'
