@@ -1,0 +1,28 @@
+ja:
+ date:
+  formats:
+   default: "%Y年%m月%d日"
+ time:
+  formats:
+   default: "%Y年%m月%d日 %H時%M分"
+ activerecord:
+  models:
+   user:
+   reservation:
+   room:
+  attributes:
+   user:
+    name: 名前
+    email: メールアドレス
+    password: パスワード
+    image_name: 画像
+   reservation:
+    start_date: 開始日
+    finish_date: 終了日
+    number_of_guest: 人数
+   room:
+    room_name: ルーム名
+    room_introduction: ルーム紹介
+    price: 料金
+    adress: 住所
+    

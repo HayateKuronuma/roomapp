@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  resources :reservations
+  
+  get 'reservations', to: 'reservations#index'
+  get 'reservations/:id', to: 'reservations#show', as: 'reservations_show'
+  post 'reservations/:id', to: 'reservations#create'
+  
   get 'rooms/posts', to: 'rooms#posts'
+  post 'rooms/:id', to: 'reservations#confirm'
   resources :rooms
   
   get '/', to: 'home#top'

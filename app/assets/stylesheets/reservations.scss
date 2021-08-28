@@ -1,0 +1,103 @@
+h6 {
+  margin: 0;
+}
+
+.confirm-form-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 25px;
+  background-color: #FFF;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px 0 rgba(21, 27, 38, 0.15);
+}
+
+.reservation-confirm-title {
+  font-size: 24px;
+  border-bottom: 1px solid #eaedef;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  font-weight: 500;
+}
+
+.price-check {
+  font-size: 20px;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.confirm-form-title {
+  margin-bottom: 8px;
+  letter-spacing: 2px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.confirm-item {
+  margin-bottom: 24px;
+}
+
+.confirm-item p {
+  background-color: #e9ecef;
+  opacity: 1;
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+
+.length_of_stay, .number_of_guest {
+  border-bottom: 1px solid #eaedef;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 0;
+}
+
+.confirm-check-text {
+  border-bottom: 1px solid #eaedef;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  font-size: 13px;
+}
+
+.grey-btn {
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+.btn-margin {
+  margin: 10px 0 15px 0;
+}
+
+.booking-box {
+  margin: 0 auto;
+  padding: 25px;
+  background-color: #FFF;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px 0 rgba(21, 27, 38, 0.15);
+}
+
+.booking-item {
+  display: flex;
+}
+
+//予約確認画面
+.booking-item {
+  padding: 20px;
+  margin: 0 15px;
+  font-size: 16px;
+}
+
+.booking-item:not(:last-child) {
+  border-bottom: 1px solid #eaedef;
+}
+
+.booking-title {
+  font-weight: bold;
+  width: 25%;
+}
+
+.booking-room-name a {
+  color: #4a90e2;
+  text-decoration: underline;
+}

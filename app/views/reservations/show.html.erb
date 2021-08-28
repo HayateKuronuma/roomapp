@@ -1,0 +1,31 @@
+<% if flash.notice %>
+  <p class="notice"><%= flash.notice %></p>
+<% end %>
+<div class="container">
+  <div class="booking-box">
+    <div class="booking-item">
+      <p class="booking-title">予約した部屋</p>
+      <div class="booking-room-name">
+        <%= link_to("#{@reservation.room.room_name}", room_path(@reservation.room_id)) %>
+      </div>
+    </div>
+    <div class="booking-item">
+      <p class="booking-title">開始日</p>
+      <div class="booking-form">
+       <%= l @reservation.start_date %>
+      </div>
+    </div>
+    <div class="booking-item">
+      <p class="booking-title">終了日</p>
+      <div class="booking-form">
+        <%= l @reservation.finish_date %>
+      </div>
+    </div>
+    <div class="booking-item">
+      <p class="booking-title">価格</p>
+      <div class="booking-form">
+        <%= @total_price %>円
+      </div>
+    </div>
+  </div>
+</div>
