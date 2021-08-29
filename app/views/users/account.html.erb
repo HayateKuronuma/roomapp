@@ -5,28 +5,23 @@
   <div class="setting-content-wrapper">
     <div class="setting-content-area">
       <%= render "shared/sidebar" %>
-      
       <div class="setting-detail-area">
         <div class="setting-detail-box">
-          
           <div class="setting-content">
             <p>アカウント</p>
           </div>
-          
           <div class="setting-content">
             <div class="setting-content-inner">
               <h4>メールアドレス</h4>
               <div class="setting-form"><%= @current_user.email %></div>
             </div>
           </div>
-          
           <div class="setting-content">
             <div class="setting-content-inner">
               <h4>パスワード</h4>
               <div class="setting-form">*********</div>
             </div>
           </div>
-          
           <div class="setting-content">
             <div class="setting-content-inner">
               <%= link_to "編集", :users_edit, class: "btn edit-btn" %>
@@ -34,7 +29,6 @@
           </div>
         </div>
       </div>
-      
     </div>
   </div>
 </div>

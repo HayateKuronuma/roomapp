@@ -1,7 +1,6 @@
 <% if flash.notice %>
   <p class="notice"><%= flash.notice %></p>
 <% end %>
-
 <div class="top">
   <div class="top-main">
     <div class="container">
@@ -17,7 +16,6 @@
       </div>
     </div>
   </div>
-  
   <div class="recomend-area">
     <div class="container">
       <div class="panel-area">
@@ -29,28 +27,24 @@
               <img class="panel-image" src="/img_tokyo.jpg">
             <% end %>
           </div>
-          
           <div class="panel-item">
             <span>大阪</span>
             <%= link_to controller: "rooms", action: "search", q: {adress_cont: '大阪'} do %>
               <img class="panel-image" src="/img_osaka.jpg">
           　<% end %>
           </div>
-          
           <div class="panel-item">
             <span>京都</span>
             <%= link_to controller: "rooms", action: "search", q: {adress_cont: '京都'} do %>
               <img class="panel-image" src="/img_kyoto.jpg">
             <% end %>
           </div>
-          
           <div class="panel-item">
             <span>札幌</span>
             <%= link_to controller: "rooms", action: "search", q: {adress_cont: '札幌'} do %>
               <img class="panel-image" src="/img_sapporo.jpg">
             <% end %>
           </div>
-          
         </div>
       </div>
     </div>
