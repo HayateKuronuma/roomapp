@@ -1,6 +1,4 @@
 class RoomsController < ApplicationController
-  def index
-  end
   
   def new
     @room = Room.new
@@ -20,18 +18,8 @@ class RoomsController < ApplicationController
     @room = Room.find(params[:id])
     @reservation = Reservation.new
   end
-
-  def edit
-  end
-
-  def update
-  end
-
-  def destroy
-  end
   
   def posts
     @rooms = @current_user.rooms
   end
-
 end

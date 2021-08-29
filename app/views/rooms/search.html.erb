@@ -1,0 +1,21 @@
+<div class="search-container">
+  <h3>検索結果<%= @results.count %>件</h3>
+  <div class="search-items">
+    <%= @results.each do |room| %>
+      <div class="room-search-frame">
+        <div class="room-search-frame-inner">
+          <%= link_to room_path(room) do %>
+            <div class="room-image-outline">
+              <%= image_tag room.room_image, class: "room-image" %>
+            </div>
+            <div class="room-profile">
+              <p class="room-profile-name"><%= room.room_name %></p>
+              <p class="room-profile-adress"><%= room.adress %></p>
+              <p class="room-profile-price">¥<%= room.price %></p>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,8 +1,5 @@
 class UsersController < ApplicationController
-  
-  def index
-  end
-  
+
   def signup
     @user = User.new
   end
@@ -16,9 +13,6 @@ class UsersController < ApplicationController
     else
       render "signup"
     end
-  end 
-  
-  def show
   end 
   
   def profile_edit
@@ -50,9 +44,6 @@ class UsersController < ApplicationController
       render "edit"
     end
   end
-  
-  def destroy
-  end 
   
   def account
   end 

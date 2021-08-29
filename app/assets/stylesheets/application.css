@@ -24,6 +24,10 @@ button:not(:disabled) {
   cursor: pointer;
 }
 
+.profiler-result {
+  display: none;
+}
+
 body {
   display: flex;
   flex-flow: column;
@@ -110,6 +114,10 @@ header {
 
 .header-serch + .header-serch {
   margin-left: 10px
+}
+
+.serch-btn-hidden {
+  display: none;
 }
 
 .header-right-nav {
