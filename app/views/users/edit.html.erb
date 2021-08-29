@@ -1,4 +1,3 @@
-<%= render "shared/error", obj:@user %>
 <% if @error_message %>
   <div class="form-error">
     <%= @error_message %>
@@ -7,6 +6,7 @@
 <div class="container">
   <div class="form-wrapper">
     <h2 class="account-edit-title">アカウント編集</h2>
+    <%= render "shared/error", obj:@user %>
     <div class="form-content">
       <%= form_tag('/users/edit', method: :patch) do |f| %>
         <div class="form-group">

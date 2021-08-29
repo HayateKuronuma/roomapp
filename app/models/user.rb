@@ -6,6 +6,6 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   validates :password, presence: true, length:{in:6..20}, confirmation: true, allow_blank: true
   validates :password_confirmation, presence: true, allow_blank: true
-  validates :image_name, presence: true, unless: -> { validation_context == :create }
+  validates :image_name, presence: { message: "を選択してください" }, unless: -> { validation_context == :create }
   validates :introduction, presence: true, unless: -> { validation_context == :create }
 end

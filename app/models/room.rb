@@ -7,4 +7,5 @@ class Room < ApplicationRecord
   validates :room_introduction, presence: true
   validates :price, presence: true
   validates :adress, presence: true
+  validates :room_image, presence: { message: "を選択してください。" }
 end
