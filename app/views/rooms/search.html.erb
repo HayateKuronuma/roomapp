@@ -1,7 +1,7 @@
 <div class="search-container">
   <h3>検索結果<%= @results.count %>件</h3>
   <div class="search-items">
-    <%= @results.each do |room| %>
+    <% @results.each do |room| %>
       <div class="room-search-frame">
         <div class="room-search-frame-inner">
           <%= link_to room_path(room) do %>
