@@ -1,0 +1,31 @@
+<div class="room-posts">
+  <h4 class="content-title">予約済みルーム一覧</h4>
+  <table>
+    <thead class="table-title">
+        <tr>
+          <th>ルーム画像</th>
+          <th>ルーム名</th>
+          <th>ルーム紹介</th>
+          <th>合計料金</th>
+          <th>開始日</th>
+          <th>終了日</th>
+          <th>予約確定日時</th>
+        </tr>
+      </thead>
+ 
+      <tbody class="table-item">
+        <% @reservations.each do |reservation| %>
+          <tr>
+            <td><%= link_to image_tag(reservation.room.room_image, class: "room-posts-img"), "/rooms/#{reservation.room_id}" %></td>
+            <td class="posts-name"><%= link_to reservation.room.room_name, "/rooms/#{reservation.room_id}" %></td>
+            <td><%= reservation.room.room_introduction %></td>
+            <td>¥<%= reservation.room.price * reservation.number_of_guest * (reservation.finish_date - reservation.start_date).to_i %></td>
+            <td><%= l reservation.start_date %></td>
+            <td><%= l reservation.finish_date %></td>
+            <td><%= l reservation.created_at %></td>
+          </tr>
+        <% end %>
+      </tbody>
+  </table>
+
+</div>

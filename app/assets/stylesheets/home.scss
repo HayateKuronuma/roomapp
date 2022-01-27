@@ -1,0 +1,123 @@
+
+body {
+  margin: 0;
+  position: relative;
+}
+
+p {
+  margin: 0;
+}
+
+.notice {
+  background-color: lightBlue;
+  color: #FFF;
+  width: 100%;
+  text-align: center;
+}
+
+.top-main {
+  background-image: url("/img_cover_top.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 650px;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 15px 0 15px;
+  max-width: 1140px;
+}
+
+.form-frame {
+  display: flex;
+  align-items: center;
+  max-width: 50%;
+  height: 650px;
+  padding: 0 15px;
+}
+
+.form-area {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.form-area-title {
+  font-size: 28px;
+  line-height: 33px;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.form-area form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 13px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.area-field {
+  padding: 6px 12px;
+  font-size: 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  margin-bottom: 24px;
+}
+
+.serch-btn {
+  color: #FFF;
+  background-color: #4a90e2;
+  border-radius: 5px;
+  border-color: #007bff;
+  padding: 6px 12px;
+  font-size: 1rem;
+  border: 1px solid #ced4da;
+  margin-bottom: 24px;
+}
+
+.recomend-area {
+  margin: 68px 0;
+}
+
+.section-title {
+  font-size: 24px;
+}
+
+.panel {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.panel-item {
+  max-width: calc(100% / 4 );
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+}
+
+.panel-item > span {
+  display: block;
+  color: #FFF;
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  text-shadow: 2px 3px 3px black;
+}
+
+.panel-image {
+  border-radius: 5px;
+  height: 360px;
+  width: 100%;
+  object-fit: cover;
+}

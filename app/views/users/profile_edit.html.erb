@@ -1,0 +1,64 @@
+<% if flash.notice %>
+  <p class="notice"><%= flash.notice %></p>
+<% end %>
+<div class="user-container">
+  <div class="setting-content-wrapper">
+    <div class="setting-content-area">
+      <%= render "shared/sidebar" %>
+      
+        <div class="setting-detail-area">
+          <div class="setting-detail-box">
+            
+            <div class="setting-content">
+              <p>プロフィール</p>
+              <%= render "shared/error", obj:@user %>
+            </div>
+            
+            <div class="setting-content">
+              <div class="icon-box">
+                <% if @current_user.image_name.attached? %>
+                  <%= image_tag @current_user.image_name.variant(gravity: :center, resize:"300x300^", crop:"300x300+0+0"), id: "current-user-img" %>
+                <% else %>
+                  <%= image_tag "/default_icon.jpg" %>
+                <% end %>
+              </div>
+            </div>
+            
+            <%= form_for @user, url: users_profile_path do |f| %>
+              <div class="setting-content">
+                <div class="setting-content-inner">
+                  <h4 class="profile-title"><%= f.label :image_name, "アイコン画像" %></h4>
+                  <div class="setting-form">
+                    <%= f.file_field :image_name %>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="setting-content">
+                <div class="setting-content-inner">
+                  <h4 class="profile-title"><%= f.label :name, "名前" %></h4>
+                  <div class="setting-form">
+                    <%= f.text_field :name, placeholder: "名前を入力" %></div>
+                </div>
+              </div>
+              
+               <div class="setting-content">
+                <div class="setting-content-inner">
+                  <h4 class="profile-title"><%= f.label :introduction, "自己紹介" %></h4>
+                  <div class="setting-form">
+                    <%= f.text_area :introduction, placeholder: "自己紹介を入力" %></div>
+                </div>
+              </div>
+              
+              <div class="setting-content">
+                <div class="setting-content-inner">
+                  <%= f.submit "更新", class: "btn edit-btn" %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      
+    </div>
+  </div>
+</div>

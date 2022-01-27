@@ -1,0 +1,52 @@
+<% if flash.notice %>
+  <p class="notice"><%= flash.notice %></p>
+<% end %>
+<div class="top">
+  <div class="top-main">
+    <div class="container">
+      <div class="form-frame">
+        <div class="form-area">
+          <p class="form-area-title">Potepan Shareでまだ体験したことのない旅をしよう</p>
+          <%= search_form_for @q, url: search_rooms_path do |f| %>
+            <%= f.label :adress_cont, "エリア" %>
+            <%= f.text_field :adress_cont, placeholder: "東京", class: "area-field" %>
+            <%= f.submit "探す", class: "serch-btn" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="recomend-area">
+    <div class="container">
+      <div class="panel-area">
+        <h1 class="section-title">おすすめのエリア</h1>
+        <div class="panel">
+          <div class="panel-item">
+            <span>東京</span>
+            <%= link_to controller: "rooms", action: "search", q: {adress_cont: '東京'} do %>
+              <img class="panel-image" src="/img_tokyo.jpg">
+            <% end %>
+          </div>
+          <div class="panel-item">
+            <span>大阪</span>
+            <%= link_to controller: "rooms", action: "search", q: {adress_cont: '大阪'} do %>
+              <img class="panel-image" src="/img_osaka.jpg">
+          　<% end %>
+          </div>
+          <div class="panel-item">
+            <span>京都</span>
+            <%= link_to controller: "rooms", action: "search", q: {adress_cont: '京都'} do %>
+              <img class="panel-image" src="/img_kyoto.jpg">
+            <% end %>
+          </div>
+          <div class="panel-item">
+            <span>札幌</span>
+            <%= link_to controller: "rooms", action: "search", q: {adress_cont: '札幌'} do %>
+              <img class="panel-image" src="/img_sapporo.jpg">
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="confirm-form-wrapper">
+    <h4 class="reservation-confirm-title">予約内容確認</h4>
+    <p class="price-check">¥<%= @reservation.room.price %> / 日</p>
+    <div class="reservation-confirm-form">
+      <div class="confirm-item">
+        <h6 class="confirm-form-title">開始日</h6>
+        <p><%= l @reservation.start_date %></p>
+      </div>
+      <div class="confirm-item">
+        <h6 class="confirm-form-title">終了日</h6>
+        <p><%= l @reservation.finish_date %></p>
+      </div>
+      <h6 class="length_of_stay">使用日数：<%= @length_of_stay %>日</h6>
+      <h6 class="number_of_guest">人数：<%= @reservation.number_of_guest %></h6>
+      <div class="confirm-item">
+        <h6 class="confirm-form-title">合計金額</h6>
+        <p>¥<%= @total_price %></p>
+      </div>
+      <p class="confirm-check-text">上記内容でよろしければ「予約を確定」を押してください</p>
+    </div>
+    <%= form_for @reservation, url: reservations_show_path do |r| %>
+      <%= r.hidden_field :start_date %>
+      <%= r.hidden_field :finish_date %>
+      <%= r.hidden_field :number_of_guest %>
+      <%= r.hidden_field :room_id %>
+      <%= r.submit "予約を確定する", class: "btn blue-btn btn-margin" %>
+      <%= link_to("ルーム詳細に戻る", :room, class: "btn grey-btn") %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,77 @@
+<% if flash.notice %>
+  <p class="notice"><%= flash.notice %></p>
+<% end %>
+<div class="user-container">
+  <div class="setting-content-wrapper">
+    <div class="setting-content-area">
+      <div class="setting-sidebar">
+        <ul>
+          <li class="active">
+            <%= link_to "基本情報", :new_room %>
+          </li>
+        </ul>
+      </div>
+      
+        <div class="setting-detail-area">
+          <div class="setting-detail-box">
+            
+            <div class="setting-content">
+              <p>ルーム情報登録</p>
+              <%= render "shared/error", obj:@room %>
+            </div>
+            
+            <%= form_for @room do |f| %>
+              <div class="setting-content">
+                <div class="setting-content-inner">
+                  <h4 class="profile-title"><%= f.label :room_name, "ルーム名" %></h4>
+                  <div class="setting-form">
+                    <%= f.text_field :room_name, placeholder: "ルーム名を入力" %>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="setting-content">
+                <div class="setting-content-inner">
+                  <h4 class="profile-title"><%= f.label :room_introduction, "ルーム紹介" %></h4>
+                  <div class="setting-form">
+                    <%= f.text_area :room_introduction, placeholder: "ルーム説明を入力" %></div>
+                </div>
+              </div>
+              
+               <div class="setting-content">
+                <div class="setting-content-inner">
+                  <h4 class="profile-title"><%= f.label :price, "料金" %></h4>
+                  <div class="setting-form">
+                    <%= f.text_field :price, placeholder: "一日あたりの料金を入力" %></div>
+                </div>
+              </div>
+              
+              <div class="setting-content">
+                <div class="setting-content-inner">
+                  <h4 class="profile-title"><%= f.label :adress, "住所" %></h4>
+                  <div class="setting-form">
+                    <%= f.text_field :adress, placeholder: "住所を入力" %></div>
+                </div>
+              </div>
+              
+              <div class="setting-content">
+                <div class="setting-content-inner">
+                  <h4 class="profile-title"><%= f.label :room_image, "ルーム画像" %></h4>
+                  <div class="setting-form">
+                    <%= f.file_field :room_image %></div>
+                </div>
+              </div>
+              
+              <div class="setting-content">
+                <div class="setting-content-inner">
+                  <%= f.hidden_field :user_id, value: @current_user.id %>
+                  <%= f.submit "登録", class: "btn edit-btn" %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      
+    </div>
+  </div>
+</div>
